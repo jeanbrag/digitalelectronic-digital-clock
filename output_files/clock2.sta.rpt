@@ -1,0 +1,1370 @@
+TimeQuest Timing Analyzer report for clock2
+Thu Sep 20 23:14:10 2018
+Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'Clk_1sec'
+ 12. Slow Model Setup: 'Clk_10sec'
+ 13. Slow Model Hold: 'Clk_10sec'
+ 14. Slow Model Hold: 'Clk_1sec'
+ 15. Slow Model Minimum Pulse Width: 'Clk_1sec'
+ 16. Slow Model Minimum Pulse Width: 'Clk_10sec'
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Fast Model Setup Summary
+ 20. Fast Model Hold Summary
+ 21. Fast Model Recovery Summary
+ 22. Fast Model Removal Summary
+ 23. Fast Model Minimum Pulse Width Summary
+ 24. Fast Model Setup: 'Clk_1sec'
+ 25. Fast Model Setup: 'Clk_10sec'
+ 26. Fast Model Hold: 'Clk_10sec'
+ 27. Fast Model Hold: 'Clk_1sec'
+ 28. Fast Model Minimum Pulse Width: 'Clk_1sec'
+ 29. Fast Model Minimum Pulse Width: 'Clk_10sec'
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Multicorner Timing Analysis Summary
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                     ;
++--------------------+--------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 177 11/07/2012 SJ Web Edition ;
+; Revision Name      ; clock2                                           ;
+; Device Family      ; Cyclone II                                       ;
+; Device Name        ; EP2C20F484C7                                     ;
+; Timing Models      ; Final                                            ;
+; Delay Model        ; Combined                                         ;
+; Rise/Fall Delays   ; Unavailable                                      ;
++--------------------+--------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets       ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------+
+; Clk_1sec   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Clk_1sec }  ;
+; Clk_10sec  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Clk_10sec } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 272.41 MHz ; 272.41 MHz      ; Clk_1sec   ;                                                               ;
+; 674.31 MHz ; 380.08 MHz      ; Clk_10sec  ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow Model Setup Summary           ;
++-----------+--------+---------------+
+; Clock     ; Slack  ; End Point TNS ;
++-----------+--------+---------------+
+; Clk_1sec  ; -2.671 ; -34.537       ;
+; Clk_10sec ; -0.539 ; -4.047        ;
++-----------+--------+---------------+
+
+
++-----------------------------------+
+; Slow Model Hold Summary           ;
++-----------+-------+---------------+
+; Clock     ; Slack ; End Point TNS ;
++-----------+-------+---------------+
+; Clk_10sec ; 0.445 ; 0.000         ;
+; Clk_1sec  ; 0.445 ; 0.000         ;
++-----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-----------+--------+-------------------+
+; Clock     ; Slack  ; End Point TNS     ;
++-----------+--------+-------------------+
+; Clk_1sec  ; -1.631 ; -22.405           ;
+; Clk_10sec ; -1.631 ; -17.517           ;
++-----------+--------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'Clk_1sec'                                                                             ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; -2.671 ; segundos[3] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.704      ;
+; -2.671 ; segundos[3] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.704      ;
+; -2.671 ; segundos[3] ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.704      ;
+; -2.671 ; segundos[3] ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.704      ;
+; -2.671 ; segundos[3] ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.704      ;
+; -2.650 ; segundos[2] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.683      ;
+; -2.650 ; segundos[2] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.683      ;
+; -2.650 ; segundos[2] ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.683      ;
+; -2.650 ; segundos[2] ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.683      ;
+; -2.650 ; segundos[2] ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.683      ;
+; -2.518 ; minutos[4]  ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.557      ;
+; -2.518 ; minutos[4]  ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.557      ;
+; -2.518 ; minutos[4]  ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.557      ;
+; -2.518 ; minutos[4]  ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.557      ;
+; -2.518 ; minutos[4]  ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.557      ;
+; -2.485 ; minutos[5]  ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.524      ;
+; -2.485 ; minutos[5]  ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.524      ;
+; -2.485 ; minutos[5]  ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.524      ;
+; -2.485 ; minutos[5]  ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.524      ;
+; -2.485 ; minutos[5]  ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.524      ;
+; -2.461 ; segundos[4] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.494      ;
+; -2.461 ; segundos[4] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.494      ;
+; -2.461 ; segundos[4] ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.494      ;
+; -2.461 ; segundos[4] ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.494      ;
+; -2.461 ; segundos[4] ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.494      ;
+; -2.335 ; segundos[5] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.368      ;
+; -2.335 ; segundos[5] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.368      ;
+; -2.335 ; segundos[5] ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.368      ;
+; -2.335 ; segundos[5] ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.368      ;
+; -2.335 ; segundos[5] ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.368      ;
+; -2.312 ; minutos[2]  ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.351      ;
+; -2.312 ; minutos[2]  ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.351      ;
+; -2.312 ; minutos[2]  ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.351      ;
+; -2.312 ; minutos[2]  ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.351      ;
+; -2.312 ; minutos[2]  ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.351      ;
+; -2.149 ; minutos[3]  ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.188      ;
+; -2.149 ; minutos[3]  ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.188      ;
+; -2.149 ; minutos[3]  ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.188      ;
+; -2.149 ; minutos[3]  ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.188      ;
+; -2.149 ; minutos[3]  ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 3.188      ;
+; -2.139 ; segundos[1] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.172      ;
+; -2.139 ; segundos[1] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.172      ;
+; -2.139 ; segundos[1] ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.172      ;
+; -2.139 ; segundos[1] ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.172      ;
+; -2.139 ; segundos[1] ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 3.172      ;
+; -2.037 ; segundos[0] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 3.075      ;
+; -1.937 ; minutos[0]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.975      ;
+; -1.901 ; segundos[3] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.933      ;
+; -1.901 ; segundos[3] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.933      ;
+; -1.901 ; segundos[3] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.933      ;
+; -1.901 ; segundos[3] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.933      ;
+; -1.901 ; segundos[3] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.933      ;
+; -1.901 ; segundos[3] ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.933      ;
+; -1.880 ; segundos[2] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.912      ;
+; -1.880 ; segundos[2] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.912      ;
+; -1.880 ; segundos[2] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.912      ;
+; -1.880 ; segundos[2] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.912      ;
+; -1.880 ; segundos[2] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.912      ;
+; -1.880 ; segundos[2] ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.912      ;
+; -1.844 ; segundos[0] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.882      ;
+; -1.843 ; minutos[1]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.881      ;
+; -1.830 ; segundos[3] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.868      ;
+; -1.830 ; segundos[2] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.868      ;
+; -1.779 ; minutos[2]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.817      ;
+; -1.775 ; minutos[0]  ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 2.814      ;
+; -1.775 ; minutos[0]  ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 2.814      ;
+; -1.775 ; minutos[0]  ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 2.814      ;
+; -1.775 ; minutos[0]  ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 2.814      ;
+; -1.775 ; minutos[0]  ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 2.814      ;
+; -1.757 ; segundos[0] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.795      ;
+; -1.720 ; segundos[1] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.758      ;
+; -1.707 ; segundos[0] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.745      ;
+; -1.691 ; segundos[4] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.723      ;
+; -1.691 ; segundos[4] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.723      ;
+; -1.691 ; segundos[4] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.723      ;
+; -1.691 ; segundos[4] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.723      ;
+; -1.691 ; segundos[4] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.723      ;
+; -1.691 ; segundos[4] ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.723      ;
+; -1.673 ; minutos[4]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.711      ;
+; -1.663 ; segundos[4] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.701      ;
+; -1.647 ; minutos[3]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.685      ;
+; -1.645 ; minutos[4]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.683      ;
+; -1.644 ; minutos[4]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.682      ;
+; -1.644 ; segundos[1] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.676      ;
+; -1.644 ; segundos[1] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.676      ;
+; -1.644 ; segundos[1] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.676      ;
+; -1.644 ; segundos[1] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.676      ;
+; -1.644 ; segundos[1] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.676      ;
+; -1.644 ; segundos[1] ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 2.676      ;
+; -1.643 ; minutos[4]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.681      ;
+; -1.640 ; minutos[4]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.678      ;
+; -1.640 ; minutos[5]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.678      ;
+; -1.637 ; segundos[3] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.675      ;
+; -1.637 ; segundos[2] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.675      ;
+; -1.612 ; minutos[5]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.650      ;
+; -1.611 ; minutos[5]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.649      ;
+; -1.610 ; minutos[5]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.648      ;
+; -1.607 ; minutos[5]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 2.645      ;
+; -1.600 ; segundos[0] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 2.633      ;
+; -1.600 ; segundos[0] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 2.633      ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'Clk_10sec'                                                                                       ;
++--------+-------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -0.539 ; segundos[1] ; minuto_segundo[1]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 1.572      ;
+; -0.504 ; minutos[1]  ; minuto_segundo[1]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; 0.001      ; 1.543      ;
+; -0.483 ; tmp         ; hora_minuto[4]~reg0    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.001      ; 1.522      ;
+; -0.471 ; minutos[4]  ; minuto_segundo[4]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; 0.001      ; 1.510      ;
+; -0.466 ; minutos[2]  ; minuto_segundo[2]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; 0.001      ; 1.505      ;
+; -0.430 ; minutos[1]  ; hora_minuto[1]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.004     ; 1.464      ;
+; -0.293 ; horas[0]    ; hora_minuto[0]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 1.326      ;
+; -0.288 ; horas[1]    ; hora_minuto[1]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 1.321      ;
+; -0.283 ; segundos[0] ; minuto_segundo[0]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 1.316      ;
+; -0.280 ; minutos[0]  ; minuto_segundo[0]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; 0.001      ; 1.319      ;
+; -0.279 ; segundos[3] ; minuto_segundo[3]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 1.312      ;
+; -0.268 ; minutos[4]  ; hora_minuto[4]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.004     ; 1.302      ;
+; -0.262 ; minutos[3]  ; minuto_segundo[3]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; 0.001      ; 1.301      ;
+; -0.258 ; segundos[5] ; minuto_segundo[5]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 1.291      ;
+; -0.242 ; tmp         ; hora_minuto[1]~reg0    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.001      ; 1.281      ;
+; -0.241 ; tmp         ; hora_minuto[0]~reg0    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.001      ; 1.280      ;
+; -0.240 ; minutos[3]  ; hora_minuto[3]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 1.273      ;
+; -0.240 ; tmp         ; hora_minuto[2]~reg0    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.001      ; 1.279      ;
+; -0.239 ; segundos[2] ; minuto_segundo[2]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 1.272      ;
+; -0.238 ; horas[2]    ; hora_minuto[2]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 1.271      ;
+; -0.221 ; tmp         ; hora_minuto[3]~reg0    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.000      ; 1.259      ;
+; -0.218 ; minutos[5]  ; minuto_segundo[5]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; 0.001      ; 1.257      ;
+; -0.134 ; minutos[0]  ; hora_minuto[0]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.004     ; 1.168      ;
+; -0.129 ; tmp         ; minuto_segundo[3]~reg0 ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.006      ; 1.173      ;
+; -0.129 ; tmp         ; minuto_segundo[4]~reg0 ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.006      ; 1.173      ;
+; -0.128 ; tmp         ; minuto_segundo[5]~reg0 ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.006      ; 1.172      ;
+; -0.127 ; tmp         ; minuto_segundo[2]~reg0 ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.006      ; 1.171      ;
+; -0.126 ; tmp         ; minuto_segundo[0]~reg0 ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.006      ; 1.170      ;
+; -0.126 ; tmp         ; minuto_segundo[1]~reg0 ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.006      ; 1.170      ;
+; -0.119 ; minutos[2]  ; hora_minuto[2]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.004     ; 1.153      ;
+; -0.105 ; horas[3]    ; hora_minuto[3]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.006     ; 1.137      ;
+; -0.065 ; minutos[5]  ; hora_minuto[5]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 1.098      ;
+; -0.031 ; segundos[4] ; minuto_segundo[4]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 1.064      ;
+; 0.108  ; tmp         ; hora_minuto[5]~reg0    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.000      ; 0.930      ;
+; 0.114  ; horas[4]    ; hora_minuto[4]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 0.919      ;
+; 0.307  ; tmp         ; tmp                    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.000      ; 0.731      ;
++--------+-------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'Clk_10sec'                                                                                       ;
++-------+-------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; tmp         ; tmp                    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.000      ; 0.731      ;
+; 0.638 ; horas[4]    ; hora_minuto[4]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 0.919      ;
+; 0.644 ; tmp         ; hora_minuto[5]~reg0    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.000      ; 0.930      ;
+; 0.783 ; segundos[4] ; minuto_segundo[4]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 1.064      ;
+; 0.817 ; minutos[5]  ; hora_minuto[5]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 1.098      ;
+; 0.857 ; horas[3]    ; hora_minuto[3]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.006     ; 1.137      ;
+; 0.871 ; minutos[2]  ; hora_minuto[2]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.004     ; 1.153      ;
+; 0.878 ; tmp         ; minuto_segundo[0]~reg0 ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.006      ; 1.170      ;
+; 0.878 ; tmp         ; minuto_segundo[1]~reg0 ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.006      ; 1.170      ;
+; 0.879 ; tmp         ; minuto_segundo[2]~reg0 ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.006      ; 1.171      ;
+; 0.880 ; tmp         ; minuto_segundo[5]~reg0 ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.006      ; 1.172      ;
+; 0.881 ; tmp         ; minuto_segundo[3]~reg0 ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.006      ; 1.173      ;
+; 0.881 ; tmp         ; minuto_segundo[4]~reg0 ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.006      ; 1.173      ;
+; 0.886 ; minutos[0]  ; hora_minuto[0]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.004     ; 1.168      ;
+; 0.970 ; minutos[5]  ; minuto_segundo[5]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; 0.001      ; 1.257      ;
+; 0.973 ; tmp         ; hora_minuto[3]~reg0    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.000      ; 1.259      ;
+; 0.990 ; horas[2]    ; hora_minuto[2]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 1.271      ;
+; 0.991 ; segundos[2] ; minuto_segundo[2]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 1.272      ;
+; 0.992 ; minutos[3]  ; hora_minuto[3]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 1.273      ;
+; 0.992 ; tmp         ; hora_minuto[2]~reg0    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.001      ; 1.279      ;
+; 0.993 ; tmp         ; hora_minuto[0]~reg0    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.001      ; 1.280      ;
+; 0.994 ; tmp         ; hora_minuto[1]~reg0    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.001      ; 1.281      ;
+; 1.010 ; segundos[5] ; minuto_segundo[5]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 1.291      ;
+; 1.014 ; minutos[3]  ; minuto_segundo[3]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; 0.001      ; 1.301      ;
+; 1.020 ; minutos[4]  ; hora_minuto[4]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.004     ; 1.302      ;
+; 1.031 ; segundos[3] ; minuto_segundo[3]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 1.312      ;
+; 1.032 ; minutos[0]  ; minuto_segundo[0]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; 0.001      ; 1.319      ;
+; 1.035 ; segundos[0] ; minuto_segundo[0]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 1.316      ;
+; 1.040 ; horas[1]    ; hora_minuto[1]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 1.321      ;
+; 1.045 ; horas[0]    ; hora_minuto[0]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 1.326      ;
+; 1.182 ; minutos[1]  ; hora_minuto[1]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.004     ; 1.464      ;
+; 1.218 ; minutos[2]  ; minuto_segundo[2]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; 0.001      ; 1.505      ;
+; 1.223 ; minutos[4]  ; minuto_segundo[4]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; 0.001      ; 1.510      ;
+; 1.235 ; tmp         ; hora_minuto[4]~reg0    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.001      ; 1.522      ;
+; 1.256 ; minutos[1]  ; minuto_segundo[1]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; 0.001      ; 1.543      ;
+; 1.291 ; segundos[1] ; minuto_segundo[1]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 1.572      ;
++-------+-------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'Clk_1sec'                                                                             ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; segundos[0] ; segundos[0] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; minutos[0]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; horas[0]    ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.830 ; minutos[1]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.116      ;
+; 0.835 ; minutos[1]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.121      ;
+; 0.836 ; minutos[1]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.122      ;
+; 0.910 ; minutos[0]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.196      ;
+; 0.977 ; segundos[1] ; segundos[1] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.263      ;
+; 0.984 ; horas[2]    ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.270      ;
+; 1.003 ; horas[0]    ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.289      ;
+; 1.007 ; minutos[1]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.293      ;
+; 1.010 ; horas[0]    ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.296      ;
+; 1.026 ; minutos[1]  ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.312      ;
+; 1.030 ; horas[1]    ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.316      ;
+; 1.035 ; minutos[1]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.321      ;
+; 1.113 ; horas[4]    ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.399      ;
+; 1.173 ; segundos[5] ; segundos[0] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.459      ;
+; 1.226 ; minutos[0]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.512      ;
+; 1.226 ; minutos[0]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.512      ;
+; 1.228 ; minutos[0]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.514      ;
+; 1.266 ; horas[2]    ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.552      ;
+; 1.269 ; horas[2]    ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.555      ;
+; 1.272 ; segundos[1] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.558      ;
+; 1.273 ; segundos[1] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.559      ;
+; 1.274 ; segundos[1] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.560      ;
+; 1.276 ; segundos[1] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.562      ;
+; 1.279 ; minutos[5]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.565      ;
+; 1.299 ; segundos[4] ; segundos[0] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.585      ;
+; 1.305 ; segundos[1] ; segundos[0] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.591      ;
+; 1.329 ; segundos[0] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.615      ;
+; 1.329 ; segundos[0] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.615      ;
+; 1.330 ; segundos[0] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.616      ;
+; 1.330 ; segundos[0] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.616      ;
+; 1.428 ; horas[1]    ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.714      ;
+; 1.431 ; horas[1]    ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.717      ;
+; 1.436 ; horas[2]    ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.722      ;
+; 1.462 ; horas[3]    ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.748      ;
+; 1.463 ; horas[1]    ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.749      ;
+; 1.467 ; horas[0]    ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.753      ;
+; 1.472 ; minutos[0]  ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.758      ;
+; 1.488 ; segundos[2] ; segundos[0] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.774      ;
+; 1.488 ; segundos[5] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.774      ;
+; 1.489 ; segundos[5] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.775      ;
+; 1.489 ; segundos[5] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.775      ;
+; 1.490 ; segundos[5] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.776      ;
+; 1.509 ; segundos[3] ; segundos[0] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.795      ;
+; 1.511 ; minutos[2]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.797      ;
+; 1.547 ; horas[0]    ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.833      ;
+; 1.598 ; horas[1]    ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.884      ;
+; 1.612 ; horas[3]    ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.898      ;
+; 1.614 ; segundos[4] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.900      ;
+; 1.615 ; segundos[4] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.901      ;
+; 1.615 ; segundos[4] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.901      ;
+; 1.616 ; segundos[4] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.902      ;
+; 1.639 ; minutos[3]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.925      ;
+; 1.646 ; segundos[0] ; segundos[1] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.932      ;
+; 1.650 ; horas[4]    ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.936      ;
+; 1.782 ; horas[3]    ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.068      ;
+; 1.803 ; segundos[2] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.089      ;
+; 1.804 ; segundos[2] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.090      ;
+; 1.804 ; segundos[2] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.090      ;
+; 1.805 ; segundos[2] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.091      ;
+; 1.817 ; horas[4]    ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.103      ;
+; 1.824 ; segundos[3] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.110      ;
+; 1.825 ; segundos[3] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.111      ;
+; 1.825 ; segundos[3] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.111      ;
+; 1.826 ; segundos[3] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.112      ;
+; 1.940 ; minutos[4]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.226      ;
+; 1.958 ; minutos[1]  ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 2.245      ;
+; 1.958 ; minutos[1]  ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 2.245      ;
+; 1.958 ; minutos[1]  ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 2.245      ;
+; 1.958 ; minutos[1]  ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 2.245      ;
+; 1.958 ; minutos[1]  ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 2.245      ;
+; 1.969 ; minutos[3]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.255      ;
+; 2.017 ; minutos[4]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.303      ;
+; 2.026 ; minutos[3]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.312      ;
+; 2.027 ; minutos[3]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.313      ;
+; 2.028 ; minutos[3]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.314      ;
+; 2.065 ; segundos[0] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.006     ; 2.345      ;
+; 2.065 ; segundos[0] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.006     ; 2.345      ;
+; 2.065 ; segundos[0] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.006     ; 2.345      ;
+; 2.065 ; segundos[0] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.006     ; 2.345      ;
+; 2.065 ; segundos[0] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.006     ; 2.345      ;
+; 2.065 ; segundos[0] ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.006     ; 2.345      ;
+; 2.101 ; minutos[2]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.387      ;
+; 2.123 ; minutos[2]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.409      ;
+; 2.190 ; minutos[2]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.476      ;
+; 2.191 ; minutos[2]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.477      ;
+; 2.317 ; segundos[5] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.006     ; 2.597      ;
+; 2.317 ; segundos[5] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.006     ; 2.597      ;
+; 2.317 ; segundos[5] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.006     ; 2.597      ;
+; 2.317 ; segundos[5] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.006     ; 2.597      ;
+; 2.317 ; segundos[5] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.006     ; 2.597      ;
+; 2.317 ; segundos[5] ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.006     ; 2.597      ;
+; 2.352 ; segundos[0] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.005     ; 2.633      ;
+; 2.352 ; segundos[0] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.005     ; 2.633      ;
+; 2.352 ; segundos[0] ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.005     ; 2.633      ;
+; 2.352 ; segundos[0] ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.005     ; 2.633      ;
+; 2.352 ; segundos[0] ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.005     ; 2.633      ;
+; 2.362 ; minutos[5]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 2.648      ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'Clk_1sec'                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; Clk_1sec ; Rise       ; Clk_1sec                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[0]                  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[0]                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[1]                  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[1]                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[2]                  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[2]                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[3]                  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[3]                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[4]                  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[4]                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[0]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[0]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[1]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[1]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[2]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[2]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[3]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[3]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[4]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[4]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[5]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[5]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[0]               ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[0]               ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[1]               ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[1]               ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[2]               ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[2]               ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[3]               ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[3]               ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[4]               ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[4]               ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[5]               ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[5]               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; Clk_1sec|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; Clk_1sec|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; Clk_1sec~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; Clk_1sec~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; Clk_1sec~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; Clk_1sec~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[4]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[4]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[0]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[0]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[1]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[1]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[2]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[2]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[3]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[3]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[4]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[4]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[5]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[5]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[0]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[0]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[1]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[1]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[2]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[2]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[3]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[3]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[4]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[4]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[5]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[5]|clk           ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'Clk_10sec'                                                                     ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock     ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; Clk_10sec ; Rise       ; Clk_10sec                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[0]~reg0        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[0]~reg0        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[1]~reg0        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[1]~reg0        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[2]~reg0        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[2]~reg0        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[3]~reg0        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[3]~reg0        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[4]~reg0        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[4]~reg0        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[5]~reg0        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[5]~reg0        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[0]~reg0     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[0]~reg0     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[1]~reg0     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[1]~reg0     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[2]~reg0     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[2]~reg0     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[3]~reg0     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[3]~reg0     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[4]~reg0     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[4]~reg0     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[5]~reg0     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[5]~reg0     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; Clk_10sec ; Rise       ; tmp                        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; Clk_10sec ; Rise       ; tmp                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; Clk_10sec|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; Clk_10sec|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; Clk_10sec~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; Clk_10sec~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; Clk_10sec~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; Clk_10sec~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[0]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[0]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[1]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[1]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[2]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[2]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[3]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[3]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[4]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[4]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[5]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[5]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[0]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[0]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[1]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[1]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[2]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[2]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[3]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[3]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[4]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[4]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[5]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[5]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; tmp|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; tmp|clk                    ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Clock to Output Times                                                          ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; hora_minuto[*]     ; Clk_10sec  ; 7.230 ; 7.230 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[0]    ; Clk_10sec  ; 6.940 ; 6.940 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[1]    ; Clk_10sec  ; 6.938 ; 6.938 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[2]    ; Clk_10sec  ; 6.941 ; 6.941 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[3]    ; Clk_10sec  ; 7.216 ; 7.216 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[4]    ; Clk_10sec  ; 6.947 ; 6.947 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[5]    ; Clk_10sec  ; 7.230 ; 7.230 ; Rise       ; Clk_10sec       ;
+; minuto_segundo[*]  ; Clk_10sec  ; 7.254 ; 7.254 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[0] ; Clk_10sec  ; 7.253 ; 7.253 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[1] ; Clk_10sec  ; 7.225 ; 7.225 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[2] ; Clk_10sec  ; 7.254 ; 7.254 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[3] ; Clk_10sec  ; 6.987 ; 6.987 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[4] ; Clk_10sec  ; 6.942 ; 6.942 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[5] ; Clk_10sec  ; 6.963 ; 6.963 ; Rise       ; Clk_10sec       ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                  ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; hora_minuto[*]     ; Clk_10sec  ; 6.938 ; 6.938 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[0]    ; Clk_10sec  ; 6.940 ; 6.940 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[1]    ; Clk_10sec  ; 6.938 ; 6.938 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[2]    ; Clk_10sec  ; 6.941 ; 6.941 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[3]    ; Clk_10sec  ; 7.216 ; 7.216 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[4]    ; Clk_10sec  ; 6.947 ; 6.947 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[5]    ; Clk_10sec  ; 7.230 ; 7.230 ; Rise       ; Clk_10sec       ;
+; minuto_segundo[*]  ; Clk_10sec  ; 6.942 ; 6.942 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[0] ; Clk_10sec  ; 7.253 ; 7.253 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[1] ; Clk_10sec  ; 7.225 ; 7.225 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[2] ; Clk_10sec  ; 7.254 ; 7.254 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[3] ; Clk_10sec  ; 6.987 ; 6.987 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[4] ; Clk_10sec  ; 6.942 ; 6.942 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[5] ; Clk_10sec  ; 6.963 ; 6.963 ; Rise       ; Clk_10sec       ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------+
+; Fast Model Setup Summary           ;
++-----------+--------+---------------+
+; Clock     ; Slack  ; End Point TNS ;
++-----------+--------+---------------+
+; Clk_1sec  ; -0.479 ; -3.848        ;
+; Clk_10sec ; 0.396  ; 0.000         ;
++-----------+--------+---------------+
+
+
++-----------------------------------+
+; Fast Model Hold Summary           ;
++-----------+-------+---------------+
+; Clock     ; Slack ; End Point TNS ;
++-----------+-------+---------------+
+; Clk_10sec ; 0.215 ; 0.000         ;
+; Clk_1sec  ; 0.215 ; 0.000         ;
++-----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-----------+--------+-------------------+
+; Clock     ; Slack  ; End Point TNS     ;
++-----------+--------+-------------------+
+; Clk_1sec  ; -1.380 ; -18.380           ;
+; Clk_10sec ; -1.380 ; -14.380           ;
++-----------+--------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'Clk_1sec'                                                                             ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; -0.479 ; segundos[3] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.505      ;
+; -0.479 ; segundos[3] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.505      ;
+; -0.479 ; segundos[3] ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.505      ;
+; -0.479 ; segundos[3] ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.505      ;
+; -0.479 ; segundos[3] ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.505      ;
+; -0.476 ; segundos[2] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.502      ;
+; -0.476 ; segundos[2] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.502      ;
+; -0.476 ; segundos[2] ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.502      ;
+; -0.476 ; segundos[2] ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.502      ;
+; -0.476 ; segundos[2] ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.502      ;
+; -0.437 ; minutos[4]  ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.470      ;
+; -0.437 ; minutos[4]  ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.470      ;
+; -0.437 ; minutos[4]  ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.470      ;
+; -0.437 ; minutos[4]  ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.470      ;
+; -0.437 ; minutos[4]  ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.470      ;
+; -0.426 ; minutos[5]  ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.459      ;
+; -0.426 ; minutos[5]  ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.459      ;
+; -0.426 ; minutos[5]  ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.459      ;
+; -0.426 ; minutos[5]  ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.459      ;
+; -0.426 ; minutos[5]  ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.459      ;
+; -0.417 ; segundos[4] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.443      ;
+; -0.417 ; segundos[4] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.443      ;
+; -0.417 ; segundos[4] ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.443      ;
+; -0.417 ; segundos[4] ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.443      ;
+; -0.417 ; segundos[4] ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.443      ;
+; -0.376 ; minutos[2]  ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.409      ;
+; -0.376 ; minutos[2]  ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.409      ;
+; -0.376 ; minutos[2]  ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.409      ;
+; -0.376 ; minutos[2]  ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.409      ;
+; -0.376 ; minutos[2]  ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.409      ;
+; -0.354 ; segundos[5] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.380      ;
+; -0.354 ; segundos[5] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.380      ;
+; -0.354 ; segundos[5] ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.380      ;
+; -0.354 ; segundos[5] ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.380      ;
+; -0.354 ; segundos[5] ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.380      ;
+; -0.309 ; segundos[1] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 1.336      ;
+; -0.309 ; segundos[1] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 1.336      ;
+; -0.309 ; segundos[1] ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 1.336      ;
+; -0.309 ; segundos[1] ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 1.336      ;
+; -0.309 ; segundos[1] ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.005     ; 1.336      ;
+; -0.295 ; minutos[3]  ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.328      ;
+; -0.295 ; minutos[3]  ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.328      ;
+; -0.295 ; minutos[3]  ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.328      ;
+; -0.295 ; minutos[3]  ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.328      ;
+; -0.295 ; minutos[3]  ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.328      ;
+; -0.201 ; segundos[3] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.226      ;
+; -0.201 ; segundos[3] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.226      ;
+; -0.201 ; segundos[3] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.226      ;
+; -0.201 ; segundos[3] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.226      ;
+; -0.201 ; segundos[3] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.226      ;
+; -0.201 ; segundos[3] ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.226      ;
+; -0.198 ; segundos[2] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.223      ;
+; -0.198 ; segundos[2] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.223      ;
+; -0.198 ; segundos[2] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.223      ;
+; -0.198 ; segundos[2] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.223      ;
+; -0.198 ; segundos[2] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.223      ;
+; -0.198 ; segundos[2] ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.223      ;
+; -0.173 ; minutos[0]  ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.206      ;
+; -0.173 ; minutos[0]  ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.206      ;
+; -0.173 ; minutos[0]  ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.206      ;
+; -0.173 ; minutos[0]  ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.206      ;
+; -0.173 ; minutos[0]  ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.206      ;
+; -0.164 ; segundos[0] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 1.196      ;
+; -0.139 ; segundos[4] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.164      ;
+; -0.139 ; segundos[4] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.164      ;
+; -0.139 ; segundos[4] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.164      ;
+; -0.139 ; segundos[4] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.164      ;
+; -0.139 ; segundos[4] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.164      ;
+; -0.139 ; segundos[4] ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.164      ;
+; -0.133 ; segundos[1] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.159      ;
+; -0.133 ; segundos[1] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.159      ;
+; -0.133 ; segundos[1] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.159      ;
+; -0.133 ; segundos[1] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.159      ;
+; -0.133 ; segundos[1] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.159      ;
+; -0.133 ; segundos[1] ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.159      ;
+; -0.128 ; segundos[0] ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.154      ;
+; -0.128 ; segundos[0] ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.154      ;
+; -0.128 ; segundos[0] ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.154      ;
+; -0.128 ; segundos[0] ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.154      ;
+; -0.128 ; segundos[0] ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.006     ; 1.154      ;
+; -0.096 ; minutos[0]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 1.128      ;
+; -0.090 ; segundos[2] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 1.122      ;
+; -0.076 ; segundos[5] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.101      ;
+; -0.076 ; segundos[5] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.101      ;
+; -0.076 ; segundos[5] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.101      ;
+; -0.076 ; segundos[5] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.101      ;
+; -0.076 ; segundos[5] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.101      ;
+; -0.076 ; segundos[5] ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.101      ;
+; -0.070 ; segundos[3] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 1.102      ;
+; -0.059 ; segundos[0] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 1.091      ;
+; -0.059 ; minutos[1]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 1.091      ;
+; -0.041 ; segundos[1] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.001      ; 1.074      ;
+; -0.027 ; minutos[2]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 1.059      ;
+; -0.021 ; segundos[0] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 1.053      ;
+; -0.019 ; minutos[4]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 1.051      ;
+; -0.019 ; minutos[4]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 1.051      ;
+; -0.018 ; minutos[4]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 1.050      ;
+; -0.017 ; minutos[4]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; 0.000      ; 1.049      ;
+; -0.017 ; segundos[0] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.042      ;
+; -0.017 ; segundos[0] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 1.000        ; -0.007     ; 1.042      ;
++--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'Clk_10sec'                                                                                      ;
++-------+-------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.396 ; segundos[1] ; minuto_segundo[1]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.004     ; 0.632      ;
+; 0.411 ; tmp         ; hora_minuto[4]~reg0    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.001      ; 0.622      ;
+; 0.424 ; minutos[1]  ; minuto_segundo[1]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; 0.002      ; 0.610      ;
+; 0.430 ; minutos[4]  ; minuto_segundo[4]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; 0.002      ; 0.604      ;
+; 0.431 ; minutos[1]  ; hora_minuto[1]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.004     ; 0.597      ;
+; 0.434 ; minutos[2]  ; minuto_segundo[2]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; 0.002      ; 0.600      ;
+; 0.485 ; horas[0]    ; hora_minuto[0]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 0.542      ;
+; 0.486 ; segundos[2] ; minuto_segundo[2]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 0.541      ;
+; 0.487 ; horas[1]    ; hora_minuto[1]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 0.540      ;
+; 0.490 ; segundos[3] ; minuto_segundo[3]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 0.537      ;
+; 0.490 ; tmp         ; hora_minuto[1]~reg0    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.001      ; 0.543      ;
+; 0.491 ; segundos[0] ; minuto_segundo[0]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 0.536      ;
+; 0.491 ; tmp         ; hora_minuto[0]~reg0    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.001      ; 0.542      ;
+; 0.492 ; tmp         ; hora_minuto[2]~reg0    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.001      ; 0.541      ;
+; 0.493 ; segundos[5] ; minuto_segundo[5]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 0.534      ;
+; 0.495 ; minutos[0]  ; minuto_segundo[0]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; 0.002      ; 0.539      ;
+; 0.496 ; minutos[4]  ; hora_minuto[4]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.004     ; 0.532      ;
+; 0.503 ; minutos[3]  ; minuto_segundo[3]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; 0.002      ; 0.531      ;
+; 0.507 ; horas[2]    ; hora_minuto[2]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 0.520      ;
+; 0.507 ; tmp         ; hora_minuto[3]~reg0    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.000      ; 0.525      ;
+; 0.508 ; minutos[5]  ; minuto_segundo[5]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; 0.002      ; 0.526      ;
+; 0.509 ; minutos[3]  ; hora_minuto[3]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 0.518      ;
+; 0.527 ; tmp         ; minuto_segundo[3]~reg0 ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.007      ; 0.512      ;
+; 0.527 ; tmp         ; minuto_segundo[4]~reg0 ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.007      ; 0.512      ;
+; 0.528 ; tmp         ; minuto_segundo[1]~reg0 ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.007      ; 0.511      ;
+; 0.528 ; tmp         ; minuto_segundo[2]~reg0 ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.007      ; 0.511      ;
+; 0.528 ; tmp         ; minuto_segundo[5]~reg0 ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.007      ; 0.511      ;
+; 0.529 ; tmp         ; minuto_segundo[0]~reg0 ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.007      ; 0.510      ;
+; 0.537 ; minutos[5]  ; hora_minuto[5]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 0.490      ;
+; 0.540 ; minutos[0]  ; hora_minuto[0]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.004     ; 0.488      ;
+; 0.549 ; minutos[2]  ; hora_minuto[2]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.004     ; 0.479      ;
+; 0.554 ; horas[3]    ; hora_minuto[3]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.006     ; 0.472      ;
+; 0.578 ; segundos[4] ; minuto_segundo[4]~reg0 ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 0.449      ;
+; 0.627 ; horas[4]    ; hora_minuto[4]~reg0    ; Clk_1sec     ; Clk_10sec   ; 1.000        ; -0.005     ; 0.400      ;
+; 0.631 ; tmp         ; hora_minuto[5]~reg0    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.000      ; 0.401      ;
+; 0.665 ; tmp         ; tmp                    ; Clk_10sec    ; Clk_10sec   ; 1.000        ; 0.000      ; 0.367      ;
++-------+-------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'Clk_10sec'                                                                                       ;
++-------+-------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; tmp         ; tmp                    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.000      ; 0.367      ;
+; 0.249 ; tmp         ; hora_minuto[5]~reg0    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.000      ; 0.401      ;
+; 0.253 ; horas[4]    ; hora_minuto[4]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 0.400      ;
+; 0.302 ; segundos[4] ; minuto_segundo[4]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 0.449      ;
+; 0.326 ; horas[3]    ; hora_minuto[3]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.006     ; 0.472      ;
+; 0.331 ; minutos[2]  ; hora_minuto[2]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.004     ; 0.479      ;
+; 0.340 ; minutos[0]  ; hora_minuto[0]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.004     ; 0.488      ;
+; 0.343 ; minutos[5]  ; hora_minuto[5]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 0.490      ;
+; 0.351 ; tmp         ; minuto_segundo[0]~reg0 ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.007      ; 0.510      ;
+; 0.352 ; tmp         ; minuto_segundo[1]~reg0 ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.007      ; 0.511      ;
+; 0.352 ; tmp         ; minuto_segundo[2]~reg0 ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.007      ; 0.511      ;
+; 0.352 ; tmp         ; minuto_segundo[5]~reg0 ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.007      ; 0.511      ;
+; 0.353 ; tmp         ; minuto_segundo[3]~reg0 ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.007      ; 0.512      ;
+; 0.353 ; tmp         ; minuto_segundo[4]~reg0 ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.007      ; 0.512      ;
+; 0.371 ; minutos[3]  ; hora_minuto[3]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 0.518      ;
+; 0.372 ; minutos[5]  ; minuto_segundo[5]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; 0.002      ; 0.526      ;
+; 0.373 ; horas[2]    ; hora_minuto[2]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 0.520      ;
+; 0.373 ; tmp         ; hora_minuto[3]~reg0    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.000      ; 0.525      ;
+; 0.377 ; minutos[3]  ; minuto_segundo[3]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; 0.002      ; 0.531      ;
+; 0.384 ; minutos[4]  ; hora_minuto[4]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.004     ; 0.532      ;
+; 0.385 ; minutos[0]  ; minuto_segundo[0]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; 0.002      ; 0.539      ;
+; 0.387 ; segundos[5] ; minuto_segundo[5]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 0.534      ;
+; 0.388 ; tmp         ; hora_minuto[2]~reg0    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.001      ; 0.541      ;
+; 0.389 ; segundos[0] ; minuto_segundo[0]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 0.536      ;
+; 0.389 ; tmp         ; hora_minuto[0]~reg0    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.001      ; 0.542      ;
+; 0.390 ; segundos[3] ; minuto_segundo[3]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 0.537      ;
+; 0.390 ; tmp         ; hora_minuto[1]~reg0    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.001      ; 0.543      ;
+; 0.393 ; horas[1]    ; hora_minuto[1]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 0.540      ;
+; 0.394 ; segundos[2] ; minuto_segundo[2]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 0.541      ;
+; 0.395 ; horas[0]    ; hora_minuto[0]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.005     ; 0.542      ;
+; 0.446 ; minutos[2]  ; minuto_segundo[2]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; 0.002      ; 0.600      ;
+; 0.449 ; minutos[1]  ; hora_minuto[1]~reg0    ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.004     ; 0.597      ;
+; 0.450 ; minutos[4]  ; minuto_segundo[4]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; 0.002      ; 0.604      ;
+; 0.456 ; minutos[1]  ; minuto_segundo[1]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; 0.002      ; 0.610      ;
+; 0.469 ; tmp         ; hora_minuto[4]~reg0    ; Clk_10sec    ; Clk_10sec   ; 0.000        ; 0.001      ; 0.622      ;
+; 0.484 ; segundos[1] ; minuto_segundo[1]~reg0 ; Clk_1sec     ; Clk_10sec   ; 0.000        ; -0.004     ; 0.632      ;
++-------+-------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'Clk_1sec'                                                                             ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; segundos[0] ; segundos[0] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; minutos[0]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; horas[0]    ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.321 ; minutos[1]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.473      ;
+; 0.326 ; minutos[1]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.478      ;
+; 0.327 ; minutos[1]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.479      ;
+; 0.351 ; minutos[0]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.503      ;
+; 0.359 ; segundos[1] ; segundos[1] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.367 ; horas[2]    ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.382 ; horas[1]    ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.534      ;
+; 0.383 ; horas[0]    ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.535      ;
+; 0.385 ; minutos[1]  ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.537      ;
+; 0.389 ; horas[0]    ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.541      ;
+; 0.394 ; minutos[1]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.546      ;
+; 0.396 ; minutos[1]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.548      ;
+; 0.418 ; horas[4]    ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.570      ;
+; 0.443 ; segundos[5] ; segundos[0] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.595      ;
+; 0.466 ; minutos[0]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.618      ;
+; 0.468 ; minutos[0]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.620      ;
+; 0.469 ; horas[2]    ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.621      ;
+; 0.470 ; minutos[0]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.622      ;
+; 0.473 ; horas[2]    ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.625      ;
+; 0.482 ; segundos[1] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 0.635      ;
+; 0.482 ; minutos[5]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.634      ;
+; 0.483 ; segundos[1] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 0.636      ;
+; 0.484 ; segundos[1] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 0.637      ;
+; 0.485 ; segundos[1] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 0.638      ;
+; 0.485 ; segundos[1] ; segundos[0] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 0.638      ;
+; 0.504 ; segundos[0] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.656      ;
+; 0.504 ; segundos[0] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.656      ;
+; 0.504 ; segundos[0] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.656      ;
+; 0.506 ; segundos[4] ; segundos[0] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.658      ;
+; 0.506 ; segundos[0] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.658      ;
+; 0.522 ; horas[1]    ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.674      ;
+; 0.525 ; horas[0]    ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.677      ;
+; 0.525 ; minutos[0]  ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.677      ;
+; 0.528 ; horas[1]    ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.680      ;
+; 0.532 ; horas[1]    ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.684      ;
+; 0.533 ; horas[3]    ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.685      ;
+; 0.542 ; horas[2]    ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.694      ;
+; 0.551 ; minutos[2]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.703      ;
+; 0.560 ; segundos[5] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.712      ;
+; 0.560 ; horas[0]    ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.712      ;
+; 0.562 ; segundos[5] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.714      ;
+; 0.562 ; segundos[5] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.714      ;
+; 0.563 ; segundos[5] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.715      ;
+; 0.565 ; segundos[2] ; segundos[0] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.717      ;
+; 0.568 ; segundos[3] ; segundos[0] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.720      ;
+; 0.585 ; segundos[0] ; segundos[1] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.001     ; 0.736      ;
+; 0.588 ; horas[3]    ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.740      ;
+; 0.601 ; horas[1]    ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.753      ;
+; 0.605 ; horas[4]    ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.757      ;
+; 0.623 ; segundos[4] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.775      ;
+; 0.625 ; segundos[4] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.777      ;
+; 0.625 ; segundos[4] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.777      ;
+; 0.626 ; segundos[4] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.778      ;
+; 0.627 ; minutos[3]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.779      ;
+; 0.661 ; horas[3]    ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.813      ;
+; 0.674 ; horas[4]    ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.826      ;
+; 0.682 ; segundos[2] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.834      ;
+; 0.684 ; segundos[2] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.836      ;
+; 0.684 ; segundos[2] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.836      ;
+; 0.685 ; segundos[3] ; segundos[5] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.837      ;
+; 0.685 ; segundos[2] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.837      ;
+; 0.687 ; minutos[4]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.839      ;
+; 0.687 ; segundos[3] ; segundos[2] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.839      ;
+; 0.687 ; segundos[3] ; segundos[3] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.839      ;
+; 0.688 ; segundos[3] ; segundos[4] ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.840      ;
+; 0.704 ; minutos[3]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.856      ;
+; 0.731 ; minutos[4]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.883      ;
+; 0.756 ; minutos[3]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.908      ;
+; 0.757 ; minutos[3]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.909      ;
+; 0.757 ; minutos[3]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.909      ;
+; 0.758 ; minutos[2]  ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.910      ;
+; 0.784 ; minutos[2]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.936      ;
+; 0.818 ; minutos[1]  ; horas[1]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 0.971      ;
+; 0.818 ; minutos[1]  ; horas[2]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 0.971      ;
+; 0.818 ; minutos[1]  ; horas[3]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 0.971      ;
+; 0.818 ; minutos[1]  ; horas[4]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 0.971      ;
+; 0.818 ; minutos[1]  ; horas[0]    ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.001      ; 0.971      ;
+; 0.838 ; minutos[2]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.990      ;
+; 0.838 ; minutos[2]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 0.990      ;
+; 0.886 ; minutos[5]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.038      ;
+; 0.887 ; minutos[5]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.039      ;
+; 0.888 ; minutos[5]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.040      ;
+; 0.888 ; minutos[5]  ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.040      ;
+; 0.897 ; segundos[0] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.007     ; 1.042      ;
+; 0.897 ; segundos[0] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.007     ; 1.042      ;
+; 0.897 ; segundos[0] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.007     ; 1.042      ;
+; 0.897 ; segundos[0] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.007     ; 1.042      ;
+; 0.897 ; segundos[0] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.007     ; 1.042      ;
+; 0.897 ; segundos[0] ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.007     ; 1.042      ;
+; 0.897 ; minutos[4]  ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.049      ;
+; 0.898 ; minutos[4]  ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.050      ;
+; 0.899 ; minutos[4]  ; minutos[0]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; 0.000      ; 1.051      ;
+; 0.956 ; segundos[5] ; minutos[1]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.007     ; 1.101      ;
+; 0.956 ; segundos[5] ; minutos[2]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.007     ; 1.101      ;
+; 0.956 ; segundos[5] ; minutos[3]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.007     ; 1.101      ;
+; 0.956 ; segundos[5] ; minutos[4]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.007     ; 1.101      ;
+; 0.956 ; segundos[5] ; minutos[5]  ; Clk_1sec     ; Clk_1sec    ; 0.000        ; -0.007     ; 1.101      ;
++-------+-------------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'Clk_1sec'                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; Clk_1sec ; Rise       ; Clk_1sec                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[0]                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[0]                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[1]                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[1]                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[2]                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[2]                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[3]                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[3]                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[4]                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[4]                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[1]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[1]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[2]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[2]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[3]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[3]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[4]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[4]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[5]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[5]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[0]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[0]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[1]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[1]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[2]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[2]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[3]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[3]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[4]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[4]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[5]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[5]               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; Clk_1sec|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; Clk_1sec|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; Clk_1sec~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; Clk_1sec~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; Clk_1sec~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; Clk_1sec~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; horas[4]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; horas[4]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[0]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[0]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[1]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[1]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[2]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[2]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[3]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[3]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[4]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[4]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; minutos[5]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; minutos[5]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[0]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[0]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[1]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[1]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[2]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[2]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[3]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[3]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[4]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[4]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_1sec ; Rise       ; segundos[5]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_1sec ; Rise       ; segundos[5]|clk           ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'Clk_10sec'                                                                     ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock     ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; Clk_10sec ; Rise       ; Clk_10sec                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[0]~reg0        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[0]~reg0        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[1]~reg0        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[1]~reg0        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[2]~reg0        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[2]~reg0        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[3]~reg0        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[3]~reg0        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[4]~reg0        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[4]~reg0        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[5]~reg0        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[5]~reg0        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[0]~reg0     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[0]~reg0     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[1]~reg0     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[1]~reg0     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[2]~reg0     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[2]~reg0     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[3]~reg0     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[3]~reg0     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[4]~reg0     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[4]~reg0     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[5]~reg0     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[5]~reg0     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10sec ; Rise       ; tmp                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; tmp                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; Clk_10sec|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; Clk_10sec|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; Clk_10sec~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; Clk_10sec~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; Clk_10sec~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; Clk_10sec~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[0]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[0]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[1]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[1]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[2]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[2]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[3]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[3]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[4]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[4]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; hora_minuto[5]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; hora_minuto[5]~reg0|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[0]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[0]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[1]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[1]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[2]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[2]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[3]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[3]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[4]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[4]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; minuto_segundo[5]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; minuto_segundo[5]~reg0|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; Clk_10sec ; Rise       ; tmp|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; Clk_10sec ; Rise       ; tmp|clk                    ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Clock to Output Times                                                          ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; hora_minuto[*]     ; Clk_10sec  ; 3.906 ; 3.906 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[0]    ; Clk_10sec  ; 3.796 ; 3.796 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[1]    ; Clk_10sec  ; 3.795 ; 3.795 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[2]    ; Clk_10sec  ; 3.796 ; 3.796 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[3]    ; Clk_10sec  ; 3.894 ; 3.894 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[4]    ; Clk_10sec  ; 3.804 ; 3.804 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[5]    ; Clk_10sec  ; 3.906 ; 3.906 ; Rise       ; Clk_10sec       ;
+; minuto_segundo[*]  ; Clk_10sec  ; 3.935 ; 3.935 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[0] ; Clk_10sec  ; 3.920 ; 3.920 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[1] ; Clk_10sec  ; 3.905 ; 3.905 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[2] ; Clk_10sec  ; 3.935 ; 3.935 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[3] ; Clk_10sec  ; 3.839 ; 3.839 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[4] ; Clk_10sec  ; 3.796 ; 3.796 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[5] ; Clk_10sec  ; 3.817 ; 3.817 ; Rise       ; Clk_10sec       ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                  ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; hora_minuto[*]     ; Clk_10sec  ; 3.795 ; 3.795 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[0]    ; Clk_10sec  ; 3.796 ; 3.796 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[1]    ; Clk_10sec  ; 3.795 ; 3.795 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[2]    ; Clk_10sec  ; 3.796 ; 3.796 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[3]    ; Clk_10sec  ; 3.894 ; 3.894 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[4]    ; Clk_10sec  ; 3.804 ; 3.804 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[5]    ; Clk_10sec  ; 3.906 ; 3.906 ; Rise       ; Clk_10sec       ;
+; minuto_segundo[*]  ; Clk_10sec  ; 3.796 ; 3.796 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[0] ; Clk_10sec  ; 3.920 ; 3.920 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[1] ; Clk_10sec  ; 3.905 ; 3.905 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[2] ; Clk_10sec  ; 3.935 ; 3.935 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[3] ; Clk_10sec  ; 3.839 ; 3.839 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[4] ; Clk_10sec  ; 3.796 ; 3.796 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[5] ; Clk_10sec  ; 3.817 ; 3.817 ; Rise       ; Clk_10sec       ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.671  ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  Clk_10sec       ; -0.539  ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  Clk_1sec        ; -2.671  ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -38.584 ; 0.0   ; 0.0      ; 0.0     ; -39.922             ;
+;  Clk_10sec       ; -4.047  ; 0.000 ; N/A      ; N/A     ; -17.517             ;
+;  Clk_1sec        ; -34.537 ; 0.000 ; N/A      ; N/A     ; -22.405             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------------+
+; Clock to Output Times                                                          ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; hora_minuto[*]     ; Clk_10sec  ; 7.230 ; 7.230 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[0]    ; Clk_10sec  ; 6.940 ; 6.940 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[1]    ; Clk_10sec  ; 6.938 ; 6.938 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[2]    ; Clk_10sec  ; 6.941 ; 6.941 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[3]    ; Clk_10sec  ; 7.216 ; 7.216 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[4]    ; Clk_10sec  ; 6.947 ; 6.947 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[5]    ; Clk_10sec  ; 7.230 ; 7.230 ; Rise       ; Clk_10sec       ;
+; minuto_segundo[*]  ; Clk_10sec  ; 7.254 ; 7.254 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[0] ; Clk_10sec  ; 7.253 ; 7.253 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[1] ; Clk_10sec  ; 7.225 ; 7.225 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[2] ; Clk_10sec  ; 7.254 ; 7.254 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[3] ; Clk_10sec  ; 6.987 ; 6.987 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[4] ; Clk_10sec  ; 6.942 ; 6.942 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[5] ; Clk_10sec  ; 6.963 ; 6.963 ; Rise       ; Clk_10sec       ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                  ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; hora_minuto[*]     ; Clk_10sec  ; 3.795 ; 3.795 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[0]    ; Clk_10sec  ; 3.796 ; 3.796 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[1]    ; Clk_10sec  ; 3.795 ; 3.795 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[2]    ; Clk_10sec  ; 3.796 ; 3.796 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[3]    ; Clk_10sec  ; 3.894 ; 3.894 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[4]    ; Clk_10sec  ; 3.804 ; 3.804 ; Rise       ; Clk_10sec       ;
+;  hora_minuto[5]    ; Clk_10sec  ; 3.906 ; 3.906 ; Rise       ; Clk_10sec       ;
+; minuto_segundo[*]  ; Clk_10sec  ; 3.796 ; 3.796 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[0] ; Clk_10sec  ; 3.920 ; 3.920 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[1] ; Clk_10sec  ; 3.905 ; 3.905 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[2] ; Clk_10sec  ; 3.935 ; 3.935 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[3] ; Clk_10sec  ; 3.839 ; 3.839 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[4] ; Clk_10sec  ; 3.796 ; 3.796 ; Rise       ; Clk_10sec       ;
+;  minuto_segundo[5] ; Clk_10sec  ; 3.817 ; 3.817 ; Rise       ; Clk_10sec       ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------+
+; Setup Transfers                                                    ;
++------------+-----------+----------+----------+----------+----------+
+; From Clock ; To Clock  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-----------+----------+----------+----------+----------+
+; Clk_1sec   ; Clk_1sec  ; 233      ; 0        ; 0        ; 0        ;
+; Clk_1sec   ; Clk_10sec ; 23       ; 0        ; 0        ; 0        ;
+; Clk_10sec  ; Clk_10sec ; 13       ; 0        ; 0        ; 0        ;
++------------+-----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++--------------------------------------------------------------------+
+; Hold Transfers                                                     ;
++------------+-----------+----------+----------+----------+----------+
+; From Clock ; To Clock  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-----------+----------+----------+----------+----------+
+; Clk_1sec   ; Clk_1sec  ; 233      ; 0        ; 0        ; 0        ;
+; Clk_1sec   ; Clk_10sec ; 23       ; 0        ; 0        ; 0        ;
+; Clk_10sec  ; Clk_10sec ; 13       ; 0        ; 0        ; 0        ;
++------------+-----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 17    ; 17   ;
+; Unconstrained Output Ports      ; 12    ; 12   ;
+; Unconstrained Output Port Paths ; 12    ; 12   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
+    Info: Processing started: Thu Sep 20 23:14:09 2018
+Info: Command: quartus_sta clock2 -c clock2
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'clock2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name Clk_1sec Clk_1sec
+    Info (332105): create_clock -period 1.000 -name Clk_10sec Clk_10sec
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.671
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.671       -34.537 Clk_1sec 
+    Info (332119):    -0.539        -4.047 Clk_10sec 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 Clk_10sec 
+    Info (332119):     0.445         0.000 Clk_1sec 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -22.405 Clk_1sec 
+    Info (332119):    -1.631       -17.517 Clk_10sec 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.479
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.479        -3.848 Clk_1sec 
+    Info (332119):     0.396         0.000 Clk_10sec 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 Clk_10sec 
+    Info (332119):     0.215         0.000 Clk_1sec 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -18.380 Clk_1sec 
+    Info (332119):    -1.380       -14.380 Clk_10sec 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 387 megabytes
+    Info: Processing ended: Thu Sep 20 23:14:10 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
